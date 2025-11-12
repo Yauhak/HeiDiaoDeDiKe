@@ -176,10 +176,10 @@ def get_video_and_audio(play_address,video_name):
             if "mcdn" in final_addresses['audio_urls'][a]['url']:
                 audio_m4s_addr=final_addresses['audio_urls'][a]['url']
                 break
-        if video_m4s_addr==None:
+        if audio_m4s_addr==None:
             for a in range(len(final_addresses['audio_backup_urls'])):
                 if "mcdn" in final_addresses['audio_backup_urls'][a]['url']:
-                    video_m4s_addr=final_addresses['audio_backup_urls'][a]['url']
+                    audio_m4s_addr=final_addresses['audio_backup_urls'][a]['url']
                     break
         #-----------------------------------------------------------
         #别无可选就选择默认链接（final_addresses中第一个链接）
