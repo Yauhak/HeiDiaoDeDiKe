@@ -181,11 +181,17 @@ def get_video_and_audio(play_address,video_name):
                 if "mcdn" in final_addresses['audio_backup_urls'][a]['url']:
                     video_m4s_addr=final_addresses['audio_backup_urls'][a]['url']
                     break
+        #-----------------------------------------------------------
         #别无可选就选择默认链接（final_addresses中第一个链接）
         #虽然一般铁定返回403
         #当然，也可以选择不跟这个视频较劲，去看其他视频哦~（开玩笑）
         #另外这些链接也是在不断变化的
         #也有可能多刷几次就能刷出MCDN的副本了
+        #-----------------------------------------------------------
+        #现在没事了
+        #之前在get媒体流文件那里出了点小Bug
+        #丢失了会话上下文
+        #导致下载带upos-sz-前缀的链接下的文件失败
         if video_m4s_addr==None:
             video_m4s_addr=final_addresses['video_urls'][0]['url']
         if audio_m4s_addr==None:
